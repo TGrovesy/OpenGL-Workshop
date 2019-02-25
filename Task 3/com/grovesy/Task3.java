@@ -67,9 +67,8 @@ public class Task3 extends JFrame implements GLEventListener {
 
 	private int createShaderProgram() {
 		GL4 gl = (GL4) GLContext.getCurrentGL();
-		String[] vShaderSource = readShaderSource("vertex.shader");
-		String[] fShaderSource = { "#version 430 \n", "out vec4 colour; \n", "void main(void)\n",
-				"{colour = vec4(0.0, 0.0, 1.0, 1.0);}", };
+		String[] vShaderSource = readShaderSource("Task 3/vertex.shader");
+		String[] fShaderSource = readShaderSource("Task 3/fragment.shader");
 		
 		int vertexShader = gl.glCreateShader(GL_VERTEX_SHADER);
 		gl.glShaderSource(vertexShader, vShaderSource.length, vShaderSource, null, 0); 
