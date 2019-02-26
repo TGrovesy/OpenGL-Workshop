@@ -1,9 +1,6 @@
 package com.grovesy;
 
-import static com.jogamp.opengl.GL.GL_POINTS;
-import static com.jogamp.opengl.GL2ES2.GL_FRAGMENT_SHADER;
-import static com.jogamp.opengl.GL2ES2.GL_VERTEX_SHADER;
-import static com.jogamp.opengl.GL2ES3.GL_COLOR;
+import static com.jogamp.opengl.GL4.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,14 +17,14 @@ import com.jogamp.opengl.GLContext;
 import com.jogamp.opengl.GLEventListener;
 import com.jogamp.opengl.awt.GLCanvas;
 
-public class Task3 extends JFrame implements GLEventListener {
+public class Task4 extends JFrame implements GLEventListener {
 
 	private GLCanvas canvas;
 
 	private int[] vertexArrayObject = new int[1];
 	private int renderingProgram;
 
-	public Task3() {
+	public Task4() {
 		setTitle("OpenGL");
 		setSize(600, 400);
 		setLocationRelativeTo(null);
@@ -46,8 +43,7 @@ public class Task3 extends JFrame implements GLEventListener {
 		gl.glClearBufferfv(GL_COLOR, 0, buffer);
 
 		gl.glUseProgram(renderingProgram);
-		gl.glPointSize(30f);
-		gl.glDrawArrays(GL_POINTS, 0, 1);
+		gl.glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
 
 	@Override
@@ -67,8 +63,8 @@ public class Task3 extends JFrame implements GLEventListener {
 
 	private int createShaderProgram() {
 		GL4 gl = (GL4) GLContext.getCurrentGL();
-		String[] vShaderSource = readShaderSource("Task 3/vertex.shader");
-		String[] fShaderSource = readShaderSource("Task 3/fragment.shader");
+		String[] vShaderSource = readShaderSource("Task 4/vertex.shader");
+		String[] fShaderSource = readShaderSource("Task 4/fragment.shader");
 		
 		int vertexShader = gl.glCreateShader(GL_VERTEX_SHADER);
 		gl.glShaderSource(vertexShader, vShaderSource.length, vShaderSource, null, 0); 
@@ -118,7 +114,7 @@ public class Task3 extends JFrame implements GLEventListener {
 	}
 
 	public static void main(String[] args) {
-		new Task3();
+		new Task4();
 	}
 
 }

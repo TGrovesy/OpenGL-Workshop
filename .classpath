@@ -3,6 +3,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="Task 2/src"/>
 	<classpathentry kind="src" path="Task 3"/>
+	<classpathentry kind="src" path="Task 4"/>
 	<classpathentry kind="lib" path="D:/Documents/programing/External Libs/OpenGL/jogl-all.jar"/>
 	<classpathentry kind="lib" path="D:/Documents/programing/External Libs/OpenGL/gluegen-rt.jar"/>
 	<classpathentry kind="output" path="bin"/>
